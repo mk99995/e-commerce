@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getProducts } from './features/fetch/productSlice'
+import { fetchProducts } from './features/fetch/productSlice'
 
 import './App.css'
 import { decrement, increment } from './features/counter/counterSlice'
@@ -11,7 +11,7 @@ function App() {
   const products = useSelector((state: RootState) => state.products.products)
   const dispatch = useDispatch<AppDispatch>()
   useEffect(() => {
-    dispatch(getProducts())
+    dispatch(fetchProducts())
   }, [dispatch])
   // let asd = [1, 1, 2]
   // console.log(products)
