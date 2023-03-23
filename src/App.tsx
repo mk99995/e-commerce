@@ -4,24 +4,24 @@ import { getProducts } from './features/fetch/productSlice'
 
 import './App.css'
 import { decrement, increment } from './features/counter/counterSlice'
-import { RootState } from './store'
+import { AppDispatch, RootState } from './store'
 
 function App() {
   const count = useSelector((state: RootState) => state.counter.value)
   const products = useSelector((state: RootState) => state.products.products)
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   useEffect(() => {
     dispatch(getProducts())
-  }, [])
+  }, [dispatch])
   // let asd = [1, 1, 2]
-  console.log(products)
+  // console.log(products)
 
   return (
     <div className="App">
       <h1>Vite + React + Toolkit + Tailwind</h1>
       <div className="card">
         {products.map((item) => (
-          <p>{item.name}</p>
+          <p key={item.name + item.id.toString()}>{item.name}</p>
         ))}
         <button onClick={() => dispatch(increment())}>Increment</button>
         <span className="px-10">{count}</span>

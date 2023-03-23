@@ -5,7 +5,7 @@ export const getProducts = createAsyncThunk('/products/fetchAll', async () => {
 })
 
 export interface ProductsState {
-  products: [{ name: string }] | []
+  products: [{ name: string; id: number }] | []
   loading: boolean
 }
 
@@ -19,7 +19,7 @@ const productsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder
+    return builder
       .addCase(getProducts.pending, (state, action) => {
         state.loading = true
       })
