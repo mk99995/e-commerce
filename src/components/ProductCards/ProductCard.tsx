@@ -18,6 +18,7 @@ const ProductCards = () => {
         <div key={item?.name + item?.id?.toString()}>
           <p>{item.name}</p>
           <p>{(Math.random() * 10 * Math.random()).toFixed(2)}€</p>
+          <button onClick={() => {}}>Add to cart</button>
         </div>
       ))}
     </div>
