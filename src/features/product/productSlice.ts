@@ -4,9 +4,10 @@ export const fetchProducts = createAsyncThunk('/products/fetchAll', async () => 
   return fetch('http://localhost:5173/products.json').then((res) => res.json())
 })
 
+export type Product = { name: string; id: number }
 export interface ProductsState {
-  products: { name: string; id: number }[] | []
-  filteredProducts: { name: string; id: number }[] | []
+  products: Product[]
+  filteredProducts: Product[]
   loading: boolean
 }
 

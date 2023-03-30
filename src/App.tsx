@@ -7,6 +7,7 @@ import { AppDispatch, RootState } from './store'
 import { login } from './features/user/userSlice'
 import ProductCards from './components/ProductCards/ProductCard'
 import Search from './components/Search/Search'
+import Cart from './components/Cart/Cart'
 
 function App() {
   const userData = useSelector((state: RootState) => state.user)
@@ -39,7 +40,7 @@ function App() {
           }}
         />
         <p>{userData.userName}</p>
-        <div id="signInDiv"></div>
+        <Cart />
         <h1>Vite + React + Toolkit + Tailwind</h1>
         <Search />
         <ProductCards />
