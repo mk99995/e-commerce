@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { searchProducts } from '../../features/product/productSlice'
-import { AppDispatch } from '../../store'
+
+import { searchProducts } from '../../../features/product/productSlice'
+import { AppDispatch } from '../../../store'
 
 const Search = () => {
   const [keyword, setKeyword] = useState('')

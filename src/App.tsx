@@ -1,51 +1,35 @@
 import './App.css'
-import { GoogleOAuthProvider } from '@react-oauth/google'
-import { GoogleLogin } from '@react-oauth/google'
-import { useDispatch, useSelector } from 'react-redux'
-import { AppDispatch, RootState } from './store'
+import { useSelector } from 'react-redux'
+import { RootState } from './store'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import { login } from './features/user/userSlice'
+import NavigationBar from './components/NavigationBar/NavigationBar'
 import ProductCards from './components/ProductCards/ProductCard'
-import Search from './components/Search/Search'
+import Search from './components/ProductCards/Search/Search'
 import Cart from './components/Cart/Cart'
+import UserPage from './components/UserPage/UserPage'
+import Checkout from './components/Checkout/Checout'
 
 function App() {
   const userData = useSelector((state: RootState) => state.user)
-  const dispatch = useDispatch<AppDispatch>()
-
-  const handleLogin = (credential: string | undefined) => {
-    {
-      function parseJwt(token: string) {
-        if (!token) {
-          return
-        }
-        const base64Url = token.split('.')[1]
-        const base64 = base64Url.replace('-', '+').replace('_', '/')
-        return JSON.parse(window.atob(base64))
-      }
-
-      if (credential) {
-        const user = parseJwt(credential)
-        dispatch(login(user.email))
-      }
-    }
-  }
 
   return (
-    <GoogleOAuthProvider clientId={import.meta.env.VITE_CLIENT_ID}>
-      <div className="App">
-        <GoogleLogin
-          onSuccess={(credentialResponse) => {
-            handleLogin(credentialResponse.credential)
-          }}
-        />
-        <p>{userData.userName}</p>
-        <Cart />
-        <h1>Vite + React + Toolkit + Tailwind</h1>
-        <Search />
-        <ProductCards />
-      </div>
-    </GoogleOAuthProvider>
+    <Router>
+      <NavigationBar />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Search />
+              <ProductCards />
+            </>
+          }></Route>
+        <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/profile" element={<UserPage />}></Route>
+        {/* <Route path="/checkout" element={<Checkout />}></Route> */}
+      </Routes>
+    </Router>
   )
 }
 

@@ -4,7 +4,7 @@ import { fetchProducts } from '../../features/product/productSlice'
 
 import ProductCard from '../ProductCart/ProductCart'
 import { AppDispatch, RootState } from '../../store'
-import CartButton from '../CartButton/CartButton'
+import CartButton from '../Cart/CartButton/CartButton'
 
 const ProductCards = () => {
   const products = useSelector((state: RootState) => state.products.products)

@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux'
 import React from 'react'
 
-import { Product } from '../../features/product/productSlice'
-import { addItem, removeItem } from '../../features/user/userSlice'
-import { AppDispatch, RootState } from '../../store'
+import { Product } from '../../../features/product/productSlice'
+import { addItem, removeItem } from '../../../features/user/userSlice'
+import { AppDispatch, RootState } from '../../../store'
 
 const CartButton = (props: { product: Product }) => {
   const dispatch = useDispatch<AppDispatch>()
