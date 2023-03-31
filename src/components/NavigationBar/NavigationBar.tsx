@@ -43,7 +43,8 @@ const NavigationBar = () => {
           <Link to="/checkout">checkout</Link>
         </li> */}
         <li>
-          <GoogleOAuthProvider clientId={import.meta.env.VITE_CLIENT_ID}>
+          <GoogleOAuthProvider
+            clientId={'1054827510571-4q3d9cks5sp7dhoi7480qb74rrvijgl5.apps.googleusercontent.com'}>
             <GoogleLogin
               onSuccess={(credentialResponse) => {
                 handleLogin(credentialResponse.credential)

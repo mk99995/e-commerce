@@ -12,7 +12,7 @@
     "id": 2,
     "name": "Organic Almond Milk",
     "description": "A delicious and healthy alternative to dairy milk.",
-    "category": "Dairy & Eggs",
+    "category": "Dairy",
     "variant": ["Unsweetened", "Vanilla"],
     "size": "1 Quart",
     "price": 3.99
@@ -21,7 +21,7 @@
     "id": 3,
     "name": "Quinoa",
     "description": "A protein-packed grain that is perfect for salads, bowls, and more.",
-    "category": "Grains & Pasta",
+    "category": "Grains",
     "variant": ["White", "Red", "Black"],
     "size": "16 oz",
     "price": 5.99
@@ -39,7 +39,7 @@
     "id": 5,
     "name": "Organic Grass-Fed Beef",
     "description": "A lean and delicious protein source that is perfect for grilling or adding to stews.",
-    "category": "Meat & Seafood",
+    "category": "Meat",
     "variant": ["Ground Beef", "Steak", "Roast"],
     "size": "1 lb",
     "price": 9.99
@@ -75,7 +75,7 @@
     "id": 9,
     "name": "Organic Brown Rice",
     "description": "A wholesome and nutritious grain that is perfect for pilafs, stir-fries, and more.",
-    "category": "Grains & Pasta",
+    "category": "Grains",
     "variant": ["Short Grain", "Long Grain", "Basmati"],
     "size": "2 lbs",
     "price": 4.99
@@ -120,7 +120,7 @@
     "id": 14,
     "name": "Quinoa",
     "description": "A nutritious and protein-rich grain that is perfect for salads, pilafs, and more.",
-    "category": "Grains & Pasta",
+    "category": "Grains",
     "variant": ["White", "Red", "Black"],
     "size": "12 oz",
     "price": 4.99
@@ -165,7 +165,7 @@
     "id": 19,
     "name": "Whole Chicken",
     "description": "A flavorful and juicy bird that is perfect for roasting, grilling, or slow-cooking.",
-    "category": "Meat & Poultry",
+    "category": "Meat",
     "variant": ["Fresh", "Frozen"],
     "size": "4-5 lbs",
     "price": 16.99
