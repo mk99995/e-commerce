@@ -2,25 +2,36 @@ import { useEffect, useState, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProducts } from '../../features/product/productSlice'
 
-import ProductCard from '../ProductCart/ProductCart'
+import ProductCard from './ProductCart/ProductCart'
 import { AppDispatch, RootState } from '../../store'
 import CartButton from '../Cart/CartButton/CartButton'
+import SelectCategory from './SelectCategory/SelectCategory'
+import { Link } from 'react-router-dom'
 
 const ProductCards = () => {
-  const products = useSelector((state: RootState) => state.products.products)
-  const cart = useSelector((state: RootState) => state.user.cart)
+  const filteredProducts = useSelector((state: RootState) => state.products.filteredProducts)
   const dispatch = useDispatch<AppDispatch>()
   useEffect(() => {
     dispatch(fetchProducts())
   }, [dispatch])
 
-  console.log(cart)
-
   return (
     <div className="cards">
-      {products?.map((item) => (
-        <div key={item?.name + item?.id?.toString()}>
-          <ProductCard name={item.name} />
+      <SelectCategory />
+      {filteredProducts?.map((item) => (
+        <div key={item.name + item.id.toString()}>
+          <Link to={'/' + item.id}>
+            <ProductCard name={item.name} price={item.price} />
+          </Link>
+          {item.variant.length > 1 ? (
+            <select>
+              {item.variant.map((item) => (
+                <option key={item} value={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+          ) : null}
           <CartButton product={item} />
         </div>
       ))}

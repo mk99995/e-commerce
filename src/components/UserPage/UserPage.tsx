@@ -13,7 +13,8 @@ const UserPage = () => {
 
       {userData.orders?.map((item) => (
         <p>
-          {item.items.reduce((a, b) => a + b.amount, 0)} items, {item.purchasedAt}
+          {item.items.reduce((a, b) => a + b.amount, 0)} item
+          {item.items.reduce((a, b) => a + b.amount, 0) > 1 ? 's' : ''}, {item.purchasedAt}
         </p>
       ))}
     </>

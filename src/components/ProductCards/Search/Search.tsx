@@ -13,7 +13,7 @@ const Search = () => {
 
     setKeyword(typedString)
 
-    dispatch(searchProducts(typedString))
+    dispatch(searchProducts({ searchTerm: typedString, category: undefined }))
   }
   return <input type="text" value={keyword} onChange={handleChange} />
 }

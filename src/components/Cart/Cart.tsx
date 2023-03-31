@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 
-import ProductCard from '../ProductCart/ProductCart'
+import ProductCard from '../ProductCards/ProductCart/ProductCart'
 import { AppDispatch, RootState } from '../../store'
 import CartButton from './CartButton/CartButton'
 import CartRemoveButton from './CartRemoveButton/CartRemoveButton'
@@ -17,12 +17,14 @@ const Cart = () => {
     <div className="cart">
       {cart?.map((item) => (
         <div key={item?.product.id.toString()}>
-          <ProductCard name={item.product.name} />
+          <ProductCard name={item.product.name} price={item.product.price} />
           <p>{item.amount}</p>
+
           <CartButton product={item.product} />
           <CartRemoveButton product={item.product} />
         </div>
       ))}
+      <p>Total: {cart.reduce((a, b) => a + b.product.price * b.amount, 0).toFixed(2)}€</p>
       <button onClick={handleClick}>Checkout</button>
     </div>
   )

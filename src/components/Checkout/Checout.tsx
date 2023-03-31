@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import ProductCard from '../ProductCart/ProductCart'
+import ProductCard from '../ProductCards/ProductCart/ProductCart'
 import { AppDispatch, RootState } from '../../store'
 
 const Checkout = () => {

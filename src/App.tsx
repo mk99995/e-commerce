@@ -25,6 +25,7 @@ function App() {
               <ProductCards />
             </>
           }></Route>
+        <Route path="/:id" element={<UserPage />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/profile" element={<UserPage />}></Route>
         {/* <Route path="/checkout" element={<Checkout />}></Route> */}
