@@ -22,7 +22,7 @@ export interface UserState {
 const initialState: UserState = {
   firstName: null,
   lastName: null,
-  email: null,
+  email: 'test@email.com',
   cart: [],
   orders: []
 }

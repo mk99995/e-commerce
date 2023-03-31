@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import React from 'react'
+import { BsCart3 } from 'react-icons/bs'
 
 import { Product } from '../../../features/product/productSlice'
 import { addItem, removeItem } from '../../../features/user/userSlice'
@@ -20,8 +20,9 @@ const CartButton = (props: { product: Product }) => {
         onClick={() => {
           handleClick(props.product)
         }}>
-        Add to cart
+        <BsCart3 />
       </button>
+
       {/* <p>{cart.includes(props.id) ? 'true' : 'false'}</p> */}
     </>
   )

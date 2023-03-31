@@ -7,6 +7,7 @@ import { AppDispatch, RootState } from '../../store'
 import CartButton from '../Cart/CartButton/CartButton'
 import SelectCategory from './SelectCategory/SelectCategory'
 import { Link } from 'react-router-dom'
+import Search from './Search/Search'
 
 const ProductCards = () => {
   const filteredProducts = useSelector((state: RootState) => state.products.filteredProducts)
@@ -17,9 +18,10 @@ const ProductCards = () => {
 
   return (
     <div className="cards">
+      <Search />
       <SelectCategory />
       {filteredProducts?.map((item) => (
-        <div key={item.name + item.id.toString()}>
+        <div className="product-card" key={item.name + item.id.toString()}>
           <Link to={'/' + item.id}>
             <ProductCard name={item.name} price={item.price} />
           </Link>

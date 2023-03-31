@@ -15,7 +15,7 @@ const SelectCategory = () => {
   }
 
   return (
-    <select onChange={handleSelect}>
+    <select id="select-category" onChange={handleSelect}>
       <option value={'All'}>All</option>
       {[...new Set(products.map((item) => item.category))].map((item) => (
         <option key={item} value={item}>

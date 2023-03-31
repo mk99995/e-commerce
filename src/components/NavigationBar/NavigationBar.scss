@@ -1,0 +1,16 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: $accent;
+  min-width: 1280px;
+  padding-left: 6%;
+
+  a {
+    color: white;
+  }
+  div {
+    // background-color: aqua;
+    border: none;
+  }
+}

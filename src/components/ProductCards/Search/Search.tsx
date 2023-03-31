@@ -15,7 +15,7 @@ const Search = () => {
 
     dispatch(searchProducts({ searchTerm: typedString, category: undefined }))
   }
-  return <input type="text" value={keyword} onChange={handleChange} />
+  return <input id="search" type="text" value={keyword} onChange={handleChange} />
 }
 
 export default Search
