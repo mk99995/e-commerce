@@ -30,6 +30,7 @@ const NavigationBar = () => {
   return (
     <>
       <nav>
+        <h1>eCOMMERCE</h1>
         <li>
           <Link to="/">home</Link>
         </li>

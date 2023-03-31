@@ -11,8 +11,8 @@ const UserPage = () => {
       </p>
       <p>{userData.email}</p>
 
-      {userData.orders?.map((item) => (
-        <p>
+      {userData.orders?.map((item, index) => (
+        <p key={item.purchasedAt + index.toString()}>
           {item.items.reduce((a, b) => a + b.amount, 0)} item
           {item.items.reduce((a, b) => a + b.amount, 0) > 1 ? 's' : ''}, {item.purchasedAt}
         </p>
